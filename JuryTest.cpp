@@ -42,11 +42,11 @@ void jury_test(vector<double> v, double d){
 		//cout << vvd[i][0] << '\n';
 		//Why was this originally checking for non positivity?
 		//Might be getting degeneracies because roots excatly on circle?(the test assumes this not true)
-		if (vvd[i][0] < 0) break;
+		if (vvd[i][0] < 0) cnt++;
 	}
 
-	cout << "Number of roots in disc: " << cnt << '\n';
-	cout << "Number of roots out of disc " << n-cnt << '\n';
+	cout << "Number of roots in disc: " << n-cnt << '\n';
+	cout << "Number of roots out of disc " << cnt << '\n';
 }
 
 int main(){
@@ -68,7 +68,7 @@ int main(){
 
 	reverse(v.begin(),v.end());
 
-	jury_test(temp,delta);
+	jury_test(v,delta);
 
 	return 0;
 }
