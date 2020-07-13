@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <math.h>
 
 using namespace std;
 
@@ -8,6 +9,11 @@ int n;
 
 void jury_test(vector<double> v, double d){
 	int i;
+
+	double scale = 1+d;
+	for(int j = 0; j < v.size();j++){
+		v[j] = pow(scale,n-j)*v[j];
+	}
 
 	//Jury Test Code
 	vector<vector<double>> vvd;
@@ -32,8 +38,8 @@ void jury_test(vector<double> v, double d){
 
 	int cnt = 0;
 	for(i = 0; i < vvd.size(); i+=2){
-		cout << i << "th row ";
-		cout << vvd[i][0] << '\n';
+		//cout << i << "th row ";
+		//cout << vvd[i][0] << '\n';
 		//Why was this originally checking for non positivity?
 		//Might be getting degeneracies because roots excatly on circle?(the test assumes this not true)
 		if (vvd[i][0] < 0) break;
@@ -47,7 +53,7 @@ int main(){
 
 	vector<double> v;
 	//Note highest order coefficient is first element of array
-	cout << "Input poly degree and then coeffcients from highest deg to lowest\n";
+	cout << "Input poly degree and then coeffcients from highest deg coef to lowest\n";
 	cin >> n;
 	vector<double> temp;
 	for(int i = 0; i <= n; i++){
@@ -56,11 +62,13 @@ int main(){
 		v.push_back(temp);
 	}
 	temp = v;
-	jury_test(temp,0.01);
+	double delta = 0.01;
+	cout << delta << " approximation\n";
+	jury_test(temp,delta);
 
 	reverse(v.begin(),v.end());
 
-	jury_test(temp,0.01);
+	jury_test(temp,delta);
 
 	return 0;
 }
