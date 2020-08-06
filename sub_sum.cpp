@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -8,10 +9,12 @@ int n;
 vector<int> sums;
 
 void print_sums(){
+	ofstream myfile;
+	myfile.open ("constructedSum");
 	for(int i = 0; i < sums.size(); i++){
-		cout << sums[i] << " ";
+		myfile << sums[i] << "\n";
 	}
-	cout << "\n";
+	myfile.close();
 }
 
 void insert(int num, vector<int>& nums){
@@ -21,22 +24,31 @@ void insert(int num, vector<int>& nums){
 	nums.push_back(num);
 }
 
-int main(){
+void print_vect(){
+	for(int i = 0; i < sums.size();i++){
+		cout << sums[i] << " ";
+	}
+	cout << '\n';
+}
+
+int main(int argc, char *argv[]){
 	
-	cout << "Input seq length:\n";	
-	cin >> n;
-	cout << "Input seq\n";
+	string filename = argv[1];
+	string line;
+	ifstream myfile;
+	myfile.open(filename);
 	sums.push_back(0);
-	for(int i = 0; i < n; i++){
+	while(getline(myfile,line)){
 		int tmp;
-		cin >> tmp;
+		tmp = stoi(line);
 		int len = sums.size();
 		for(int j = 0; j < len; j++){
 			//Insertion sort
-			insert(tmp+sums[j],sums);
+			//insert(tmp+sums[j],sums);
+			sums.push_back(tmp+sums[j]);
 		}
 	}
-
+	myfile.close();
 	sort(sums.begin(),sums.end());
 	print_sums();
 	return 0;

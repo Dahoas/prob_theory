@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -35,23 +36,25 @@ bool clear(int ele, int indx, int sum){
 }
 
 void print_seq(){
+	ofstream myfile;
+	myfile.open("deconstructedSum.txt");
 	for(int i = 0; i < seq.size(); i++){
-		cout << seq[i] << " ";
+		myfile << seq[i] << "\n";
 	}
-	cout << "\n";
+	myfile.close();
 }
 
-int main(){
-	
-	cout << "Input seq length:(Power of 2)\n";	
-	cin >> n;
+int main(int argc, char* argv[]){
 
-	cout << "Input seq\n";
-	for(int i = 0; i < n; i++){
+	string line;
+	ifstream myfile;
+	myfile.open(argv[1]);
+	while(getline(myfile,line)){
 		int tmp;
-		cin >> tmp;
+		tmp = stoi(line);
 		sums.push_back(tmp);
 	}
+	myfile.close();
 	sort(sums.begin(),sums.end());
 
 	if(sums[0] != 0){
