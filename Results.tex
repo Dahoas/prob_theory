@@ -1,0 +1,172 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmp}[theorem]{Example}
+
+
+\title{\vspace{-3em}Some Results}
+
+
+
+\begin{document}
+
+Consider the monotone strictly increasing sequence of nonnegative numbers $X = (x_i)_{i=1}^L$, $L \in \N$. We consdier the exponential sum defined by $S_X(z) = \sum_{n=1}^L e^{x_nz}$ and consider its zeroes. 
+
+
+\section{On Concavity of Geometric Sequence}
+
+This argument needs some small fixing(I misplace some terms in the computation) but the core idea should still work: show concavity of $F(t) = log(t\sum e^(k t))$ by looking at level sets of second derivative of $log(\sum e^(kt)$ and bounding decay via integral approximation. Lots of annoying algebra. But clearly exponentially decaying.
+
+\section{On Imaginary Zeroes of Arithmetic Progressions and Symmetries}
+
+\begin{theorem}
+	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{proof}
+ Write 
+	\begin{align*}
+		S_X(z) = \sum_{n=1}^L e^(x_n z) = 0 \iff e^{x_1z}(\sum_{n=1}^L e^{(x_n-1x_1)z}) = 0 \iff \sum_{n=1}^L e^{(x_n-x_1)z} = 0
+	\end{align*}
+
+	since $e^{x_1z}$ has no zeroes. So wlog we may assume $x_1 = 0$, since the translation still results in an arithmetic sequence. Then we sum
+
+	\begin{align*}
+		\sum_{n=1}^L e^{x_1 z} &= \sum_{n=1}^L e^{(n-1)cz} = \sum_{n=0}^{L-1}(e^{cz})^{n} = \frac{e^{Lcz}-1}{e^{cz}-1}
+	\end{align*}
+
+	So 
+
+	\begin{align*}
+		S_X(z) = 0 \implies \frac{e^{Lcz}-1}{e^{cz}-1} = 0 \implies e^{Lcz} = 1 \implies z = ib
+	\end{align*}
+
+	for some $b \in \R$. In fact we must have $Lcz = 2\pi n \implies z = \frac{2 \pi n}{L c}$ for some $n \in \Z$
+\end{proof} 
+
+Using Rouche's Theorem we can extend this result to the symmetric case:
+
+\begin{theorem}
+	Consider the sequence $Y = -X \cup X + c$ where X is arithmetic as defined above and $c \in \R$ is an arbitrary translation. Then $S_Y(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{proof}
+	Via shifting it suffices to consider $c = 0$. Then we argue wlog for $z \in \C$ s.t. $Re(z) > 0$, $|S_X(z)| \geq |S_{-X}(z)|$. Since we already know $S_X$ has no zeroes in an arbitrarily small ball around $z \in \C, Re(z) > 0$, this completes the proof via Rouche. 
+
+	Simply compute
+
+	\begin{align*}
+		& S_X(z) = \frac{e^{Lcz}-1}{e^{cz}-1}, S_{-X}(z) = \frac{e^{-Lcz}-1}{e^{-cz}-1} \\
+		& |S_{-X}| \leq |S_{X}| \iff |\frac{e^{-Lcz}-1}{e^{-cz}-1}| \leq |\frac{e^{Lcz}-1}{e^{cz}-1}| \iff |\frac{e^{-Lcz}}{e^{-cz}}||\frac{e^{Lcz}-1}{e^{cz}-1}| \leq |\frac{e^{Lcz}-1}{e^{cz}-1}| \\
+		& \iff 1 \leq |\frac{e^{Lcz}}{e^{cz}}| = e^{Re(z)(L-1)c}
+	\end{align*}
+\end{proof}
+
+\section{On Imaginary Zeroes of Complement Sequences}
+
+Let the sequence X defined above be integer valued. We prove 
+
+\begin{theorem}
+	$S_X(z) = 0 \implies Re(z) = 0 \iff \forall n \in [L], x_i \in X \iff x_L - x_n \in X$ or X is a translation of such a sequence.
+\end{theorem}
+
+\begin{proof}
+
+	Write 
+	\begin{align*}
+		S_X(z) = \sum_{n=1}^L e^(x_n z) = 0 \iff e^{x_1z}(\sum_{n=1}^L e^{(x_n-1x_1)z}) = 0 \iff \sum_{n=1}^L e^{(x_n-x_1)z} = 0
+	\end{align*}
+
+	since $e^{x_1z}$ has no zeroes. So wlog we may assume $x_1 = 0$. Then make the change of variables $z = log(z')$ where we note complex log is surjective 
+	since $z = log(z') \iff e^z = z'$. Also $z = ib \iff log(z') = ib \iff z' = e^(ib) \implies z' \in \mathbb{S}^1$. Compute
+
+	\begin{align*}
+		S_X(log(z')) = 1 + \sum_{n=2}^L e^{log((z')^{x_n})} = 1 + \sum_{n=2}^L (z')^{x_n} = P_X(z')
+	\end{align*}
+
+	which is a polynomial in terms of z'. Thus $S_X(z)$ has an imaginary root $\iff$ $P_X(z')$ has a root on the complex unit circle. So $S_X$ has strictly imaginary axis roots iff $P_X$ has strictly unit modulus roots. It is known that the only polynomials which have strictly unit modulus roots are the palindromic polynomials($a_i = a_{n-i}$) and the anti-palindromic polynomials($a_i = -a_{n-i}$)\cite{MR}. It s clear our polynomial P cannot be anti-palindromic, so to have all roots on $\mathbb{S}^1$ it must be palindromic. 
+
+	The rest does not work since palindromic polynomials need not have all unit modulus roots.
+
+\end{proof}
+
+\begin{remark}
+	This result includes a farily wide class of sequences, including integer arithmetic progressions and their symmetries. Call this class the set of complement sequences $\mathcal{C}$. So in particular this implies the random variable defined as $P(X = k) = 1/2L$ for $k \in \{-L,...,-1\} \cup \{1,...,L\}$ is type L(and hence Ultra-Sub Gaussian). This also fully characterizes discrete integer valued uniform type L random variables.
+\end{remark}
+
+\section{On The Zeroes of Other Types of Sequences}
+
+
+Don't yet have a full characterization but we know through testing
+
+\begin{itemize}
+	\item The geometric sequence $(q^i)_{i=1}^L$ does not have strictly imaginary zeroes
+	\item Binomial coefficient sequences(the first half) do not have strictly imaginary zeroes
+\end{itemize}
+
+so this breaks for the full log-concave class.
+
+\section{Other Ideas}
+
+I came across a theorem from Control Theory? called the Jury Test\cite{KB} which tells us when a polynomial has zeroes outside of the unit disc by looking at operations on the coefficients. I don't think this is useful anymore since we now have a complete characterization via these palindromic polynomials, but I'm not sure. It's proved using Rouche's theorem so it may be useful.
+
+I think we should be able to extend this proof invovling palindromic polynomials to a wider class via some shifting arguments, but I haven't thought about how very thoroughly yet.
+
+My notation changed several times over the course of writing this out, sorry about that.
+
+%\nocite{*}
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{MR} Markovsky. I, Shodhan. R,
+Palindromic Polynomials, Time-Reversible Systems, and Conserved Quantities. https://eprints.soton.ac.uk/266592/1/Med08.pdf
+
+\bibitem{KB} Keel. L, Bhattarcharyya. S,
+A New Proof of the Jury Test. https://ieeexplore.ieee.org/document/703305
+%\bibitem{Z-2} 
+%https://mathoverflow.net/questions/208349
+
+\end{thebibliography}
+
+\end{document}
+
+
+

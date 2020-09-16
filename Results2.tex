@@ -1,0 +1,272 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\lL}{\mathcal{L}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmp}[theorem]{Example}
+
+
+\title{\vspace{-3em}Some Results}
+
+
+
+\begin{document}
+
+\section{Statements}
+
+Let $\lL$ denote the class of type L random variables.
+
+
+\subsection{Closure Conditions}
+
+\begin{theorem}[Closed Under Scaling] \label{them:MULT}
+	Let $\lambda \in \R, X \in \lL$. Then $\lambda X \in \lL$
+\end{theorem}
+
+\begin{theorem}[Closed Under Translation] \label{them:SHIFT}
+	Let $\lambda \in \R, X \in \lL$. Then $X+\lambda \in \lL$
+\end{theorem}
+
+\begin{theorem}[Closed Under Sum] \label{them:SUM}
+	Let $X,Y \in \lL$ independent. Then $X+Y \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Bernoulli Sums] \label{them:BER}
+	Let $\delta_{\lambda}, n \in \Z$ be bernoulli with parameter 1/2 taking values on $0$ and $n$. Then $\sum \delta_{n_k} \in \lL$ for $k \in \N$. Notice this corresponds to the product $\prod (1+x^{n_k})$ 
+\end{theorem}
+
+\begin{theorem}[Integer Symmetrization] \label{them:ISYM}
+	Let $X \in \lL$ with $X > 0$ integer valued. Then $\epsilon X \in \lL$ where $\epsilon$ random sign.
+\end{theorem}
+
+\begin{theorem}[Arithmetic Symmetrization] \label{them:ASYM}
+	Let $X \in \lL$ with $X > 0$ a uniform arithmetic progression. Then $\epsilon X \in \lL$ where $\epsilon$ random sign.
+\end{theorem}
+
+\begin{theorem}[General Symetrization] \label{them:GSYM}
+	Let $X \in \lL$. Suppose the powerseries representing $\psi_X(z) = \E e^{z X}$ is entire with strictly real coefficients in power series form. Then $\epsilon X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Weak Convergence] \label{them:WC}
+	See Newman 2019 paper
+\end{theorem}
+
+\subsection{Polya's Examples}
+
+\begin{theorem}[Decreasing Concave Density(173)] \label{CCDNSTY}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[L1 Bounded Derivative(175)] \label{LBDER}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ with density f s.t. $|f(1)| \geq \int_0^1 |f'(t)|dt$. Then $X \in \lL$. Note in particular this works for the case $f$ is increasing.
+\end{theorem}
+
+\begin{theorem}[Exponential Density(170)] \label{EXPDEN}
+	Let $\alpha$ be even integer greater than 2. Then if $X$ a symmetric continuous random variable with density of the form $e^{-t^{\alpha}}$ then $X \in \lL$
+\end{theorem}
+
+\begin{theorem}[Exponential Product Density(161)] \label{EXPPDEN}
+	Let $1 > \alpha \geq 0, 0 < \alpha_1 \leq \alpha_2 \leq ...$ and reciprocal convergent. Then if $g(z)= e^{-\alpha z} (1-\frac{z}{\alpha_1})(1-\frac{z}{\alpha_2})...$ we have for symmetric X with density $e^{-t^2} g(-t^2)$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Bessel Function(159)] \label{BF}
+	The symmetric continuous random variable X with density $\frac{2}{\pi\sqrt{1-t^2}}$ in $\lL$.
+\end{theorem} 
+
+\begin{theorem}[Large nth Coefficient(27)] \label{LNC}
+	Suppose X a discrete integer valued symmetric distribution. If $p_0 + 2p_1 +... + 2p_{n-1} < 2p_n$ then $X \in \lL$. 
+\end{theorem}
+
+%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+
+\subsection{Newman's Examples}
+
+\begin{theorem}[Arithmetic Sequences] \label{them:AS}
+	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{theorem}[Uniform(Newman 7)] \label{UNI}
+	Let $X$ be random variable with density $\frac{d\mu}{dy} = 1$ if $|y| \leq A$ and 0 otherwise. $A > 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Newman (8)] \label{N8}
+	Density $(1-y^2)^{(d-2)/2}$ with $|y| \leq 1$ and 0 otherwise. For $d > 0$. 
+\end{theorem}
+
+\begin{theorem}[Newman (9)] \label{N9}
+	Density $e^{-\lambda cosh(y)}$, $\lambda >0$
+\end{theorem}
+
+\begin{theorem}[Newman (10)] \label{N10}
+	$e^{-ay^4-by^2}$ with $a>0$
+\end{theorem}
+
+\subsection{Other Examples}
+
+\begin{theorem}[Enestrom-Kakeya] \label{them:EK}
+	If $X$ integer valued symmetric with $0\leq p_0 \leq 2 p_1 \leq ... \leq 2p_n$ with $p_n >0$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Absolute Value] \label{them:ABS}
+	Let $a_0,a_1,...,a_n \in \R$ with $|a_0| + .. | a_{n-1}| \leq |a_n|$ then the trig polys $p_c(z) = \sum_{k=0}^n a_k cos(kz)$ and the sin one have only real zeroes
+\end{theorem}
+
+\begin{theorem}[Shifted Symmetry] \label{SS}
+	Let $X \in \lL$. Then $\exists \lambda \in \R$ s.t. $X - \lambda$ is symmetric.
+\end{theorem}
+
+\begin{theorem}[Renyi] \label{RY}
+	Renyi paper
+\end{theorem}
+
+\begin{theorem}
+	4.6 from Thesis
+\end{theorem}
+
+\subsection{Nonexamples}
+
+\begin{itemize}
+	\item The geometric sequence $(q^i)_{i=1}^L$ does not have strictly imaginary zeroes
+	\item Binomial coefficient sequences(the first half) do not have strictly imaginary zeroes
+\end{itemize}
+
+In particular not all log-concave sequences are type L.
+
+\section{Proofs}
+
+\begin{proof}[Proof of Theorem \ref{them:CE}]
+	Do after Newman and Polya.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:MULT}]
+	Suppose $X\in \lL$. Then $\E e^{z\lambda X} = 0 \implies \lambda z \in i \R \implies z \in i \R$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:SHIFT}]
+	Suppose $X \in \lL$. Then $0=\E e^{z(X+c)} = e^{cz} \E e^{zX} \iff 0 = \E e^{zX}$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:SUM}]
+	See Newman's \cite{NC}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:BER}]
+	This is a sum of type L random variables.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:ISYM}]
+	Let $X \in \lL$ with $X > 0$. Then $\psi_X(i z) = \E e^{i z\epsilon X} = \sum_{k=1}^n \frac{1}{2}p_k (e^{i x_k z} + e^{-i x_k z}) = \sum_{k=1}^n p_k cos(x_k z)$. Theorem 2.18 from \cite{HP} tells us if $P_c(z) = p_1z^{x_1} + ... + p_n z^{x_n}$ has zeroes only on the unit circle,  then $\psi_X(iz)$ as only real zeroes, ie. $\psi_X(z)$ has only imaginary zeroes. But with a change of variables $P_c$ is exactly $\E e^{zX}$ which has strictly imaginary zeroes, implying $P_c$ has zeroes strictly on the unit circle. 
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:AS}]
+ Write 
+	\begin{align*}
+		S_X(z) = \sum_{n=1}^L e^(x_n z) = 0 \iff e^{x_1z}(\sum_{n=1}^L e^{(x_n-1x_1)z}) = 0 \iff \sum_{n=1}^L e^{(x_n-x_1)z} = 0
+	\end{align*}
+
+	since $e^{x_1z}$ has no zeroes. So wlog we may assume $x_1 = 0$, since the translation still results in an arithmetic sequence. Then we sum
+
+	\begin{align*}
+		\sum_{n=1}^L e^{x_1 z} &= \sum_{n=1}^L e^{(n-1)cz} = \sum_{n=0}^{L-1}(e^{cz})^{n} = \frac{e^{Lcz}-1}{e^{cz}-1}
+	\end{align*}
+
+	So 
+
+	\begin{align*}
+		S_X(z) = 0 \implies \frac{e^{Lcz}-1}{e^{cz}-1} = 0 \implies e^{Lcz} = 1 \implies z = ib
+	\end{align*}
+
+	for some $b \in \R$. In fact we must have $Lcz = 2\pi n \implies z = \frac{2 \pi n}{L c}$ for some $n \in \Z$
+\end{proof} 
+
+\begin{proof}[Proof of Theorem \ref{them:GSYM}]
+
+	%Actualy I think we could have more zeroes on imaginary axis possibly. Thionk about hadamard. But this is fine. Rouche precludes them elsewhere.
+	Alternatively $\E e^{z \epsilon X} = \E e^{z\epsilon (X-c)}e^{z\epsilon c} = \frac{1}{2}e^{zc}\E e^{z(X-c)}+\frac{1}{2}e^{-zc}\E e^{-z(X-c)} = \frac{1}{2}\E e^{z(X-c)}(e^{zc}+^{-zc})$ where we use symmetry. Note the last term only has roots on the imaginary axis.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{UNI}]
+	Wlog suppose $A = 1$. Then $f' = 0$ on $[-1,1]$ and hence by $\ref{LBDER}$ type L.
+	%Would like to get better at making nonoverlapping phase arguments
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{N8}]
+	Follows from a generalization of Iliya.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{N9}]
+	
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{them:EK}]
+	Suppose $X$ symmetric, integer valued with probability distribution $0 \leq p_0 \leq 2p_1 \leq ... \leq 2p_n$. Then $\psi_X(iz) = p_0 + \sum 2p_k cos(kz)$. The Enestrom-Kakaya Theorem(2.17 from \cite{HP}) tells us all the zeroes of the polynomial $p_0 +2p_1x+...+2p_nx^n$ has all zeroes in the closed unit disk. So then $\psi_X$ has all zeroes on the imaginary axis via the argument from \ref{them:ISYM}.
+\end{proof}
+%\nocite{*}
+
+\begin{proof}[Proof of Theorem \ref{them:ABS}]
+	See Lemma 4.2 in Thesis
+
+\begin{thebibliography}{9}
+
+
+\bibitem{MR} Markovsky. I, Shodhan. R,
+Palindromic Polynomials, Time-Reversible Systems, and Conserved Quantities. https://eprints.soton.ac.uk/266592/1/Med08.pdf
+
+\bibitem{KB} Keel. L, Bhattarcharyya. S,
+A New Proof of the Jury Test. https://ieeexplore.ieee.org/document/703305
+%\bibitem{Z-2} 
+%https://mathoverflow.net/questions/208349
+\bibitem{NC} Newman, An Extension of Khintchines Inequality. 
+
+\bibitem{PS} Polya G. Szego G. Problems and Theorems in Analysis. 
+
+\bibitem{HP} Hallum P. Zeroes of Entire Functions Represented By Fourier Transforms
+%20-%20An%20extension%20of%20the%20khinchin%20inequality%20(3).pdf
+
+\bibitem{NW} Newman C. Wu W. Lee Yang Property and Gaussian Multiplicative Chaos
+
+\bibitem{DR} Dimitrov D. Rusev P. Zeroes of Entire Fourier Transforms
+
+\end{thebibliography}
+
+\end{document}
+
+
+
