@@ -1,17 +1,21 @@
 import matplotlib.pyplot as plt
-import tkinter
+import numpy as np
+import subprocess
+import sys
 
-def histogram(numbers,bins):
-	for i in numbers:
-		try:
-			numbers = list(map(float,numbers))
-			plt.title("Density")
-			plt.xlabel("Value")
-			plt.ylabel("Frequency")
-			plt.show()
-			plt.close('all')
-		except:
-			print('Please input numbers only')
+filename = sys.argv[1]
+myfile = open(filename,"r")
+numbers = myfile.readlines()
+numbers = np.array(numbers)
+data = []
+print(data)
+for i in range(0,len(numbers)):
+    num = int(numbers[i])
+    data = np.append(data,num)
 
-numbers = input("Enter numbers: ").split(',')
-bins = numbers.length()
+d = np.diff(np.unique(data)).min()
+left_of_first_bin = data.min()-d
+right_of_last_bin = data.max()+d
+plt.hist(data,np.arange(left_of_first_bin,right_of_last_bin + d, d))
+plt.show()
+
