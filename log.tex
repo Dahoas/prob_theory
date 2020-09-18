@@ -14,10 +14,11 @@
 \newcommand{\C}{\mathbb{C}} 
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
-\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
 \newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
 \newcommand{\red}{\color{red}}
 \newcommand{\shift}{\vdash}
+\newcommand{\pP}{\mathcal{P}}
+\newcommand{\lL}{\mathcal{L}}
 
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\sgn}{sgn}
@@ -37,8 +38,13 @@
 \newtheorem{conjecture}{Conjecture}
 
 \theoremstyle{definition}
-\newtheorem{defn}[theorem]{Definition}
-\newtheorem{exmp}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{prop}
+\newtheorem{prop}[theorem]{Prop}
+
+\theoremstyle{Corollary}
+\newtheorem{Corollary}[theorem]{Corollary}
 
 
 \title{\vspace{-3em}Log}
@@ -69,13 +75,118 @@ In summary: All three terms cannot be equal. If two are equal the other must be 
 
 Further note in general the diagonal of $A$, $(a_{ii})_{i=1}^n$ is irrelevant due to shifting. So in particular Positive semi definiteness is not required. Since $tr(A) = \sum \lambda_i$ where the trace is arbitrary.
 
-\section{9/13}
+\section{9/17}
 
-\subsection{Polya Schur Theory}
+\subsection{Multiplier Sequences}
 
+\begin{definition}
+	$T = \{\gamma_k\}_{k=0}^{\infty} \subseteq \R$ is a multiplier sequence if, when arbitrary polynomial $p(z) = \sum_{k=0}^n a_k z^k$ ahs only real zeroes, $T[p(z)] = \sum_{k=0}^n \gamma_k a_kz^k$ has only real zeroes. This extends to arbitrary $f \in \lL \pP$ via $T[f(z)] = \sum_{k=0}^{\infty} \gamma_k a_k z^k$
+\end{definition}
+
+Power series analog of universal factors. Whereas universal factors correspond to integral representations(as we will see below).
+
+Classification:
+
+\begin{theorem}
+	T is a multiplier sequence $\iff$
+
+	1. The function
+	\[
+		\phi(z) = T[e^z] = \sum \gamma_k \frac{z^k}{k!} \in \lL \pP^+
+	\]
+
+	2. Jensen Polynomials 
+	\[
+		T[(1+z)^n] = \sum_{k=0}^n {n \choose k} \gamma_k z^k \in \lL \pP^+
+	\]
+\end{theorem}
+
+Also we have the connection via Laguerre
+
+\begin{theorem}
+	If $\phi(z) \in \lL\pP$ and $\phi$ has no zeroes in $(0,n)$ then $\phi$ evaluated at the integers $[n]$ acts as a multiplier sequence on polynomials of degree up to n. 
+\end{theorem}
+
+
+\subsection{Universal Factors}
+
+
+\begin{definition}\textit{Universal Factors}
+	
+	Let $K(t) \in O(e^{-|t|^b})$, $b > 2$. Then $\phi(t)$ is a universal factor of class r if for $K$ with $\int_{-r}^r K(t) e^{izt}dt \in \lL \pP$ then
+	\begin{align*}
+		\int_{-r}^r \phi(t)K(t)e^{izt}dt \in \lL \pP
+	\end{align*}
+	is entire with only real zeroes
+\end{definition}
+
+
+\begin{theorem}
+	Let $\phi(z) = \sum_{k=0}^{\infty} \gamma_k z^k$ with $\phi, f \in \mathcal{L}\mathcal{P}$. Then the differential operator $\phi(D)$ when acting on f has real zeroes.
+\end{theorem}
+
+So differentiation via functions in the $\lL \pP$ of functions in $\lL \pP$ is closed.
+
+\begin{prop}
+
+Let $0 < r \leq \infty$. If $\phi(iz) \in \lL \pP$ then $\phi(t)$ is a universal factor of class r. 
+\end{prop}
+
+Does this go the other way? Probably not. Is there a restriction allowing us to go other way?
+
+\begin{theorem}
+	If $K(t) = e^{-\alpha_1 t^2} K_0(t)$, $\alpha_1 > 0$ and $K_0(t)$ is s.t.
+	\[
+		K_0(z) = ce^{\alpha_0 z^2 + bz} z^m \prod_{k=1}^{\infty} (1+z/z_k) e^{-z/z_k}
+	\]
+	for $b,c,iz_k \in \R$ with $\alpha_1 > \alpha_0$ then $f(z) = \int_{-\infty}^{\infty}K(t) e^{izt}dt \in \lL \pP$
+\end{theorem}	
+
+We think of $K_0$ as $\phi_X$ for some $x \in \lL$. Then if we regard this as a density for some rv Y, $y \in \lL$. What is this operation called?
+
+\begin{theorem}
+	If real analytic $\phi(t)$ is universal factor, then $\phi(iz) \in \lL \pP$. 
+\end{theorem}
+
+So universal factors, ie. functions that preserve real zeroes via pointwise product with the kernel, yield type $\lL$ characteristics(assuming positivity). Analytically universal factors are exactly those functions in $\lL \pP$.
+
+\begin{definition}\textit{Mellin Transform}
+	
+	If $K(t) : [0,\infty) \to \R$ integrable on $[0,\infty)$ then 
+	\[
+		H(z) = \int_0^{\infty}K(t)t^{z-1}dt
+	\]
+	is the Mellin transform
+\end{definition}
+
+Connects log of a random varible with with the random variable(scaling the density by an exponential). Sometimes easier to show property of Mellin transform instead of fourier transform to show some $f \in \lL \pP$ .
+
+The proofs of the above characterizations heavily lie on differential operators. This is how we can view the pointwise product. 
+
+
+\subsection{Polya-Schur Theory}
+
+Reading of \cite{BB}.
+
+Key questions in polya-schur theory:
+
+Let $U \subseteq \C$ with $Z(U)$ the set of all complex polynomials whose zeroes lie in $U$. Set $Z_n(U)$ to be the subset of such polynomials of degree at most n. 
+
+\begin{itemize}
+	\item What is the set of all linear transformations $T : Z(U) \to Z(U) \cup \{0\}$
+	\item What is the set of all linear transformations $T : Z_n(U) \to Z(U) \cup \{0\}$
+\end{itemize}
+
+So what linear operators preserve the zeroes of such polynomials? \cite{BB} solves this problem for $U$ a line, circle, closed half plane, closed disk, complement of open disk. 
+
+Note in particular this addresses problems of what linear operators preserve the zeroes of functions $\lL \pP$, via approximation by Jensen polynomials: Apply operator to Jensen polynomials and converge zeroes via hurwitz.
 
 
 \begin{thebibliography}{9}
+
+\bibitem{PH} Hallum P. Zeroes of Entire Funtions Represented by Fourier Transforms. 
+
+\bibiem{BB} Borcea J, Branden P. Polya-schur Master Theorems for Circular Domains and Their Boundaries
 
 
 \bibitem{MR} Markovsky. I, Shodhan. R,
@@ -85,6 +196,8 @@ Palindromic Polynomials, Time-Reversible Systems, and Conserved Quantities. http
 A New Proof of the Jury Test. https://ieeexplore.ieee.org/document/703305
 %\bibitem{Z-2} 
 %https://mathoverflow.net/questions/208349
+
+
 
 \end{thebibliography}
 

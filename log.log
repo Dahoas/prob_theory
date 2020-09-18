@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  11 SEP 2020 12:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  17 SEP 2020 19:51
 entering extended mode
 **C:/Users/Alex/Desktop/Tkocz/log.tex
 (C:/Users/Alex/Desktop/Tkocz/log.tex
@@ -291,23 +291,30 @@ Package: geometry 2018/04/16 v5.8 Page Geometry
 fg"))
 \c@theorem=\count113
 \c@conjecture=\count114
- (log.aux)
+
+
+Package amsthm Warning: Unknown theoremstyle `prop' on input line 43.
+
+
+Package amsthm Warning: Unknown theoremstyle `Corollary' on input line 46.
+
+(log.aux)
 \openout1 = `log.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
 ase.sty"
@@ -325,7 +332,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.st
 y"
@@ -337,9 +344,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count115
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
  (log.out) (log.out)
 \@outlinefile=\write3
 \openout3 = `log.out'.
@@ -379,58 +386,66 @@ LaTeX Info: Redefining \nameref on input line 48.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 52.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 52.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 79--83
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 100.
+
+[1
+
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
 []\OT1/cmr/m/n/10 Keel. L, Bhattar-charyya. S, A New Proof of the Jury Test.
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
-[1
-
-{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (log.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
 Package rerunfilecheck Info: File `log.out' has not changed.
-(rerunfilecheck)             Checksum: E8B53970F9AB6813F2F6C31388B0C987;105.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+(rerunfilecheck)             Checksum: 9386B656A60A75079E61811EEDA9ED04;350.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
  ) 
 Here is how much of TeX's memory you used:
- 6145 strings out of 492973
- 89852 string characters out of 3127135
- 188127 words of memory out of 3000000
- 9959 multiletter control sequences out of 15000+200000
- 6549 words of font info for 26 fonts, out of 3000000 for 9000
+ 6175 strings out of 492973
+ 90163 string characters out of 3127135
+ 190178 words of memory out of 3000000
+ 9971 multiletter control sequences out of 15000+200000
+ 7203 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,5n,28p,931b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,8n,28p,931b,434s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Alex/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Alex
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:
-/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Alex/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Alex/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-
-Output written on log.pdf (1 page, 130293 bytes).
+cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Alex/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ale
+x/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C
+:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Alex/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
+sers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
+10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on log.pdf (3 pages, 184198 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
