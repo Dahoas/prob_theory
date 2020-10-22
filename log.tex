@@ -53,29 +53,8 @@
 
 \begin{document}
 
-\section{8/20}
 
-We use $\vdash$ to mean equality up to a shift(multiplication by $z^{\alpha}$).
-
-\subsection{Quadratic Forms}
-
-We consider whether $\sum_{i,j} a_{ij} \epsilon_i \epsilon_j = \langle A \epsilon,\epsilon\rangle$ is type L for vector of independently distributed random signs $\epsilon$ and matrix $A$. 
-
-Compute $\sum_{i,j} a_{ij} \epsilon_i \epsilon_j = \sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j + \sum_{i=1}^n \epsilon_{n+1}\epsilon_i(a_{ij}+a_{ji}) = \sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j+ \sum_{i=1}^n \epsilon_{n+1}\epsilon_i(b_i)$. 
-
-Then $\E z^{\langle A\epsilon, \epsilon \rangle} = \E z^{\sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j+ \sum_{i=1}^n \epsilon_{n+1}\epsilon_i(b_i)} =$ 
-
-$\frac{1}{2}\E_{\epsilon_{[n]}}z^{\sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j+ \sum_{i=1}^n \epsilon_i(b_i)}+\frac{1}{2}\E_{\epsilon_{[n]}}z^{\sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j- \sum_{i=1}^n \epsilon_i(b_i)}=$
-
-$\E z^{\sum_{1 \leq i,j\leq n} a_{ij} \epsilon_i \epsilon_j+ \sum_{i=1}^n \epsilon_i(b_i)}$ via symmetry. Since we are only interested in the zeroes we may factor out constant terms $a_{i,i}\epsilon_i$ to examine $\E z^{\sum_{1 \leq i<j\leq n} c_{ij} \epsilon_i \epsilon_j+ \sum_{i=1}^n \epsilon_i(b_i)}$ where $c_{ij} = a_{ij}+a_{ji}$. Wlog we may suppose all coefficients $> 0$.
-
-Consider the case $n = 2$. We have $\E z^{a\epsilon_1 \epsilon_2 + b\epsilon_1 + c \epsilon_2} \propto z^{a+b+c} + z^{-a+b-c}+z^{-a-b+c}+z^{a-b-c}$. After a shift this becomes $z^{2a+2b+2c}+z^{2a}+z^{2b}+z^{2c}$. In the integer case, the polynomial must be palindromic. If $a=b=c$ then we have $z^{6a} +3z^{2a} \vdash z^{4a} +3$ which is not palindromic. Suppose wlog $a=b$. Then $z^{2a+2b+2c}+z^{2a}+z^{2b}+z^{2c} = z^{4a+2c}+2z^{2a}+z^{2c}$. Then to be palindromic it must be that $2a = \frac{1}{2}(4a+2c)$ implying $c = 0$. Note if this is the case the polynomial is unirooted. Now suppose wlog  $a<b<c$. We have $z^{2a+2b+2c}+z^{2a}+z^{2b}+z^{2c} \shift z^{2b+2c}+z^{2(c-a)}+z^{2(b-a)}+1$. For palindromicity we need $2b+2c = 2c+2b-4a \implies a = 0$. So again we require the smallsest term to be 0. So $z^{2(b+c)}+z^{2b}+z^{2c}+1$. Note this does have all roots on unit circle then.
-
-In summary: All three terms cannot be equal. If two are equal the other must be zero. If none are equal the smallest must be 0. Note that if any of the terms are 0, the result is trivially type l(as it is either a sum of two type L random variables or a symmerization of one).
-
-Further note in general the diagonal of $A$, $(a_{ii})_{i=1}^n$ is irrelevant due to shifting. So in particular Positive semi definiteness is not required. Since $tr(A) = \sum \lambda_i$ where the trace is arbitrary.
-
-\section{9/17}
+\section{Polya Schur Notes}
 
 \subsection{Multiplier Sequences}
 
@@ -181,12 +160,44 @@ So what linear operators preserve the zeroes of such polynomials? \cite{BB} solv
 
 Note in particular this addresses problems of what linear operators preserve the zeroes of functions $\lL \pP$, via approximation by Jensen polynomials: Apply operator to Jensen polynomials and converge zeroes via hurwitz.
 
+\begin{theorem}(Polya-Schur Theorem)
+
+	Let $\lambda : \N \to \R$ be a sequence of real numbers and $T: \R[z] \to \R[z]$ be the corresponding diagonal linear operator given by $T(z^n) = \lambda(n) z^n$. Define $\Phi(z)$ as
+
+\[
+	\Phi(z) = \sum_{k=0}^{\infty} \frac{\lambda(k)}{k!}z^k
+\]
+Then the following are equivalent:
+	
+	i) $\lambda$ is a multiplier sequence
+
+	ii) $\Phi$ defines an entire function which is the limit, uniformly on compact sets, of polynomials with only real zeros of the same sign
+
+	iii) Either $\Phi(z)$ or $\Phi(-z)$ is entire of the form $C z^n e^{az}\prod_{k=1}^{\infty}(1+\alpha_k z)$ with $a,\alpha_k \geq 0$ and $\sum \alpha_k < \infty$
+
+	iv) For all non-negative integers n th polynomials $T[(z+1)^n]$ is hyperolic with all zeroes same sign
+\end{theorem}
+
+
+This is the classical (partial) characterization of Polya-Schur. Note the multiplier sequences correspond to diagonal matrices on the monomial basis. The problem was solved more generally in the following form:
+
+Set $\mathcal{H}_1(\C)$ to be the set of stable polynomials in n varibles. 
+
+\begin{theorem}
+	Let $n \in \N$ and $T : \R_n[z] \to \R[z]$ be linear operator. Then T preserves hyperbolicity $\iff$ either
+
+	1) T has range of dimension at most two and is of the form $T(f) = \alpha(f) P + \beta(f) Q$ for $\alpha,\beta \in \R_n[z] \to \R$ are linear functionals and $P,Q \in \mathcal{H}_1(\R)$ have interlacing zeroes
+
+	2) $T[(z+w)^n] \in \mathcal{H}_2(\R)$ 
+
+	3) $T[(z-w)^n] \in \mathcal{H}_2(\R)$
+\end{theorem}
 
 \begin{thebibliography}{9}
 
 \bibitem{PH} Hallum P. Zeroes of Entire Funtions Represented by Fourier Transforms. 
 
-\bibiem{BB} Borcea J, Branden P. Polya-schur Master Theorems for Circular Domains and Their Boundaries
+\bibitem{BB} Borcea J, Branden P. Polya-schur Master Theorems for Circular Domains and Their Boundaries
 
 
 \bibitem{MR} Markovsky. I, Shodhan. R,
