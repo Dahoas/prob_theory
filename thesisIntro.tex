@@ -1,0 +1,345 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\shift}{\vdash}
+\newcommand{\lL}{\mathcal{L}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmp}[theorem]{Example}
+
+
+\title{\vspace{-3em}A Study of Khintchine Type Inequalities for Random Variables}
+\author{Alex Havrilla}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Known Examples of Type L Random Variables}
+
+Relatively few examples of Type L random variables are known. The majority we do have follow from results of Polya in his study of kernels producing strictly real zeroes of fourier transforms of the form:
+
+\begin{align*}
+	\phi(z) = \int_{\R} K(x)cos(zx)dx
+\end{align*}
+
+for some kernel $K : \R \to \R$. This can naturally be interpreted as the inverse fourier transform of a random variable $X$ with density $K$. And (assuming symmetry and nice gaussanity conditions) if $\phi$ has strictly real zeroes then we know $\phi(iz) = \E e^{-zX}$ has strictly imaginary zeroes and hence X is type L.
+
+\subsection{Polya's Examples}
+
+All of these examples can be found in Polya's \textit{Problems in Analysis} but the experience of retrieving them(and their proofs) is somewhat time consuming. Hopefully this presentation is somewhat less so. We attach proofs of these examples in an appendix. 
+
+\begin{theorem}[Decreasing Concave Density(173)] \label{CCDNSTY}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[L1 Bounded Derivative(175)] \label{LBDER}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ with density f s.t. $|f(1)| \geq \int_0^1 |f'(t)|dt$. Then $X \in \lL$. Note in particular this works for the case $f$ is increasing.
+\end{theorem}
+
+\begin{theorem}[Exponential Density(170)] \label{EXPDEN}
+	Let $\alpha$ be even integer greater than 2. Then if $X$ a symmetric continuous random variable with density of the form $e^{-t^{\alpha}}$ then $X \in \lL$
+\end{theorem}
+
+\begin{theorem}[Exponential Product Density(161)] \label{EXPPDEN}
+	Let $1 > \alpha \geq 0, 0 < \alpha_1 \leq \alpha_2 \leq ...$ and reciprocal convergent. Then if $g(z)= e^{-\alpha z} (1-\frac{z}{\alpha_1})(1-\frac{z}{\alpha_2})...$ we have for symmetric X with density $e^{-t^2} g(-t^2)$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Bessel Function(159)] \label{BF}
+	The symmetric continuous random variable X with density $\frac{2}{\pi\sqrt{1-t^2}}$ in $\lL$.
+\end{theorem} 
+
+\begin{theorem}[Large nth Coefficient(27)] \label{LNC}
+	Suppose X a discrete integer valued symmetric distribution. If $p_0 + 2p_1 +... + 2p_{n-1} < 2p_n$ then $X \in \lL$. 
+\end{theorem}
+
+%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+
+\subsection{Newman's Examples}
+
+Newman, who initiated our study in Type L random variables, produced some examples as well. 
+
+\begin{theorem}[Arithmetic Sequences] \label{them:AS}
+	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{theorem}[Uniform(Newman 7)] \label{UNI}
+	Let $X$ be random variable with density $\frac{d\mu}{dy} = 1$ if $|y| \leq A$ and 0 otherwise. $A > 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Newman (8)] \label{N8}
+	Density $(1-y^2)^{(d-2)/2}$ with $|y| \leq 1$ and 0 otherwise. For $d > 0$. 
+\end{theorem}
+
+\begin{theorem}[Newman (9)] \label{N9}
+	Density $e^{-\lambda cosh(y)}$, $\lambda >0$
+\end{theorem}
+
+\begin{theorem}[Newman (10)] \label{N10}
+	$e^{-ay^4-by^2}$ with $a>0$
+\end{theorem}
+
+\subsection{Other Examples}
+
+\begin{theorem}[Enestrom-Kakeya] \label{them:EK}
+	If $X$ integer valued symmetric with $0\leq p_0 \leq 2 p_1 \leq ... \leq 2p_n$ with $p_n >0$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Absolute Value] \label{them:ABS}
+	Let $a_0,a_1,...,a_n \in \R$ with $|a_0| + .. | a_{n-1}| \leq |a_n|$ then the trig polys $p_c(z) = \sum_{k=0}^n a_k cos(kz)$ and the sin one have only real zeroes
+\end{theorem}
+
+\subsection{Our Examples}
+
+\begin{theorem}[Rapidly Decreasing Polynomial] \label{RDP}
+	Suppose X has density $e^{-x^2/2}x^2$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[General Symmetrization] \label{GSYM}
+	Suppose $X -c$ is type L for some $c \in \lL$. Then $\epsilon X \in \lL$.
+\end{theorem}
+
+
+\section{Type L Example Proofs}
+
+\subsection{Problem ???}
+
+\begin{theorem}[V ???]
+	If $\alpha$ is an even integer greater than two, $f(z) = \int_0^{\infty} e^{-t^{\alpha}}cos(zt)dt$
+\end{theorem}
+
+\subsection{Problem 173 and Relevant Theorems}
+
+
+\begin{theorem}[V 173] \label{173}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[V 26] \label{26}
+	Let $A_1,...,A_n$ be non-zero real numbers and $a_1 < ... < a_n$. Then if $A_1 >0, ..., A_{n-1}>0$ or $A_1 > 0,..., A_{k-1} > 0, A_{k+1}>0,... A_n > 0$ with $\sum A_k < 0$ then $f(x) =\frac{A_1}{x-a_1} + ... + \frac{A_n}{x-a_n}$ has only real zeroes
+\end{theorem}
+
+\begin{theorem}[III 165]
+	Suppose entire $F(z)$ satisfies $|F(x+iy)| < Ce^{\rho |y|}$. 
+
+	Then $\frac{d}{dz}(\frac{F(z)}{sin(\rho z)}) = -\sum_{\Z} \frac{\rho (-1)^n F(\frac{n \pi }{\rho})}{(\rho z - n \pi)^2}$
+\end{theorem}
+
+\begin{theorem}[III 170(Precursor to 201)]
+	Suppose $f_1, ..., f_n,..$ are regular in open $U \subseteq \mathbb{R}$, and convering uniformly in any closed domain inside $\R$. Then limit f is regular
+\end{theorem}
+
+\begin{theorem}[III 194(Rouche)]
+	Suppose $f,\phi$ regular in interior of $\mathcal{D}$, cts on closed domain,, and $|f(z)| > |\phi(z)| \forall z \in \partial \mathcal{D}$. Then $f(z)+\phi(z)$ has exactly the same number of zeores as f inside $\mathcal{D}$.
+\end{theorem}
+
+\begin{theorem}[III 201(Hurwitz Theorem main tool for controlling limit zeros)]
+	Suppose $f_n \to f$ pointwise with $\mathcal{Z}$ the set of all zeroes of $f_n$ in $\R$. Then the zeroes of $f$ in $\R$ are the limit points of $\mathcal{Z}$ in $\R$.
+\end{theorem}
+
+\subsection{Problem 175 and Relevant Problems}
+
+\begin{theorem}[V 175] \label{175}
+	Let $f(t)$ be real and continuously differentiable for $0 \leq t \leq 1$. If we have $|f(1)| \geq \int_0^1 |f'(t)| dt$ then the entire function $F(z) = \int_0^1 f(t)cos(zt)dt$ has only real zeroes
+\end{theorem}
+
+\begin{theorem}[V 174]
+	Let $\phi(t)$ be properly integrable for $0 \leq t \leq 1$. If $\int_0^1 |\phi(t)| dt \leq 1$ then entire $F(z)=sin(z) \int_0^1 \phi(t) sin(zt)dt$ has only real zeroes
+\end{theorem}
+
+\begin{theorem}[V 27]
+	The trignometric polynomial $f(x) = a_0 + a_1 cos(x) + ... + a_ncos(nx)$ with real coefficients has only real zeroes if $|a_0| + |a_1| + ... + |a_{n-1}| < a_n$(note this also applies to sin via differentiation and rolle's thm)
+\end{theorem}
+
+\begin{theorem}[VI 14]
+	A trig poly with real coefficients $g(z) = \lambda_0 + \lambda_1 cos(z) +\mu_1sin(z) + ... + \lambda_n cos(nz)+\mu_n sin(nz)$ has exactly 2n zeroes(where shifting by $2\pi$ is not distinct)
+\end{theorem}
+
+
+%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+
+
+\section{Proofs}
+
+
+\subsection{173 Proofs}
+
+\begin{proof}[Proof of Problem 173]
+	Via integration by parts twice we write $z^2 F(z) = zf(1)sin(z) - f'(0)(1-cos(z)) + \int_0^1 f''(t)(cos(z)-cos(zt))dt$. Compute $((2m-1)\pi)^2F((2m-1)\pi) = -2f'(0)+\int_0^1f''(t)(-1-cos((2m-1)\pi t) > 0$. Then compute $(2m \pi)^2F(2m\pi) = \int_0^1f''(t)(1-cos(2m\pi t)) < 0$ since $f'' < 0$. Which gives infinitely many zeroes. Note $F(0)>0$. The rational function
+
+	$f_n(z) = (-1)^n\frac{F(-n\pi)}{z+n\pi} + ... + \frac{F(-2\pi)}{z+2\pi}-\frac{F(-\pi)}{z+\pi}+\frac{F(0)}{z}-\frac{F(\pi)}{z-\pi}+...+(-1)^n\frac{F(n\pi)}{z-n\pi}$ can have via \textbf{26} either all real zeroes of 2n-2 real zeroes and 2 imaginary. Further it converges to $\frac{F(z)}{sin(z)}$ by integrating the result of \textbf{165}. So as we take the limit, the nonreal zeroes $\frac{F(z)}{sin(z)}$ as via \textbf{201} they are the limit points of approaching $f_n$ zeroes. In the case we have two nonreal zeroes, it must be the case they are strictly imaginary, as $F(z) = F(-z) =F(\overline{z})= 0$. But $F(ix) = \int_0^1 f(t)\frac{e^{xt}+e^{-xt}}{2}dt > 0$
+\end{proof}
+
+\begin{proof}[Proof of Problem 26]
+	Idea is to count zeroes intervals $(a_i,a_{i+1})$ via changes of sign. Write $f(x) = P(x)/Q(x)$ for $Q = (x-a_1)...(x-a_n)$ and $P$ a sum of n-1 deg polys. Via $\epsilon$ approximations $f(a_1+\epsilon) > 0$ and $f(a_2 -\epsilon) <0$ which continues alternating. Note that poles blow up as we get very close, dominating sign. Then regarding polynomial in numerator this is a full accounting.
+
+	(Can we still use IVT despite singularities? We look at intervals in between which do have continuity.) 
+\end{proof}
+
+\begin{proof}[Proof of Problem 165]
+	Somewhere in German Hurwitz-Courant
+\end{proof}
+
+\begin{proof}[Proof of Problem 170(Precursor to 201)]
+	Use Cauchy integral theorem on closed cts curve $L \subseteq \R$. Write $f_n(z) = \frac{1}{2 \pi i }\int_L \frac{f_n(\xi)}{\xi-z}d\xi$ via cauchy integral formula. We know uniformly on L $f_n(\xi)/(\xi - z) \to f(\xi)/(\xi -z)$ and further f cts(as uniform limit of continuous functions). So $f_n(z) \to \frac{1}{2 \pi i} \int_L \frac{f(\xi)}{\xi -z}d \xi$(why?). And the last function is regular(why?).
+\end{proof}
+
+\begin{proof}[Proof of problem 194(Rouche)!]
+	We the stronger symmetric form of Rouche: Let $C: [0,1] \to \C$ be simple closed curve whose image is boundary of $\partial K$. If $f,g$ holomorphic on K with $|f(z) - g(z)| < |f(z)|+|g(z)|$ on $\partial K$ then they have the same number of zeroes. 
+
+	Via the argument principle the number of zeroes of f in K is $\frac{1}{2 \pi i} \int_C \frac{f'(z)}{f(z)}dz = \frac{1}{2\pi i}\int_{f \circ C} \frac{dz}{z} = Ind_{f\circ C}(0)$ ie. the winding number of closed curve $f \circ C$. https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem
+\end{proof}
+
+\begin{proof}[Proof of Problem 201(Hurwitz Limit Theorem!)]
+	We use Rouche. Note $|f(z)| > |f_n(z) - f(z)|$ on boundary of D when n large(since no zeroes on boundary). Then apply rouche. So f has same number of zeroes as close $f_n$. Thus same zeroes(as we must have at least those approaching, and no more besides via rouche).
+\end{proof}
+
+\subsection{175 Proofs}
+
+\begin{proof}[Proof of Problem 175]
+	Write $\frac{z}{f(1)} \int_0^1 f(t)cos(zt)dt = sin(z) - \int_0^1 \frac{f'(t)}{f(1)}sin(zt) dt$ with integration by parts where the RHS has all real zeroes via \textbf{174}
+\end{proof}
+
+\begin{proof}[Proof of Problem 174]
+	Wlog suppose $\int_0^1 |\phi(t)| dt < 1$. Otherwise just scale by a multiplicative factor. Then for large $n \in \N$, $\frac{1}{n}|\phi(\frac{1}{n})| + ... + \frac{1}{n} |\phi(\frac{n-1}{n})| < 1$. So by \textbf{27} $sin(\frac{nz}{n}) - \frac{1}{n}\phi(\frac{1}{n}) sin(\frac{z}{n}) - \frac{1}{n}\phi(\frac{2}{n})sin(\frac{2 z}{n}) - ... - \frac{1}{n}\phi(\frac{n-1}{n})sin(\frac{n-1}{n}z)$ has no complex zeroes
+\end{proof}
+
+\begin{proof}[Proof of Problem 27]
+	We count the changes of sign. In particular $f(0) > 0, f(\pi/n) < 0, ..., f(\frac{2 n \pi}{n}) > 0$ where the largest term alternates sign. Hence we have $2n$ real zeroes on $[0,2\pi]$. Further via definition of complex sine and substiution of $x = e^{iz}$ this is the full number of zeroes we can have(since we have a polynomial of degree n). This is \textbf{14}
+\end{proof}
+
+\begin{proof}[Proof of Problem 14]
+	Use complex definitions of sine and cosine and make substutution $z=e^{i\theta}$.
+\end{proof}
+
+\subsection{Newman Proofs}
+
+
+
+\begin{proof}[Proof of Theorem \ref{them:AS}]
+ Write 
+	\begin{align*}
+		S_X(z) = \sum_{n=1}^L e^(x_n z) = 0 \iff e^{x_1z}(\sum_{n=1}^L e^{(x_n-1x_1)z}) = 0 \iff \sum_{n=1}^L e^{(x_n-x_1)z} = 0
+	\end{align*}
+
+	since $e^{x_1z}$ has no zeroes. So wlog we may assume $x_1 = 0$, since the translation still results in an arithmetic sequence. Then we sum
+
+	\begin{align*}
+		\sum_{n=1}^L e^{x_1 z} &= \sum_{n=1}^L e^{(n-1)cz} = \sum_{n=0}^{L-1}(e^{cz})^{n} = \frac{e^{Lcz}-1}{e^{cz}-1}
+	\end{align*}
+
+	So 
+
+	\begin{align*}
+		S_X(z) = 0 \implies \frac{e^{Lcz}-1}{e^{cz}-1} = 0 \implies e^{Lcz} = 1 \implies z = ib
+	\end{align*}
+
+	for some $b \in \R$. In fact we must have $Lcz = 2\pi n \implies z = \frac{2 \pi n}{L c}$ for some $n \in \Z$
+\end{proof} 
+
+\begin{proof}[Proof of Theorem \ref{them:GSYM}]
+
+	%Actualy I think we could have more zeroes on imaginary axis possibly. Thionk about hadamard. But this is fine. Rouche precludes them elsewhere.
+	Alternatively $\E e^{z \epsilon X} = \E e^{z\epsilon (X-c)}e^{z\epsilon c} = \frac{1}{2}e^{zc}\E e^{z(X-c)}+\frac{1}{2}e^{-zc}\E e^{-z(X-c)} = \frac{1}{2}\E e^{z(X-c)}(e^{zc}+^{-zc})$ where we use symmetry. Note the last term only has roots on the imaginary axis.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{UNI}]
+	Wlog suppose $A = 1$. Then $f' = 0$ on $[-1,1]$ and hence by $\ref{LBDER}$ type L.
+	%Would like to get better at making nonoverlapping phase arguments
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{N8}]
+	Follows from a generalization of Iliya.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{N9}]
+	Currently unknown.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{N10}]
+	Proof by Newman. Comes from field theories.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{them:EK}]
+	Suppose $X$ symmetric, integer valued with probability distribution $0 \leq p_0 \leq 2p_1 \leq ... \leq 2p_n$. Then $\psi_X(iz) = p_0 + \sum 2p_k cos(kz)$. The Enestrom-Kakaya Theorem(2.17 from \cite{HP}) tells us all the zeroes of the polynomial $p_0 +2p_1x+...+2p_nx^n$ has all zeroes in the closed unit disk. So then $\psi_X$ has all zeroes on the imaginary axis via the argument from \ref{them:ISYM}.
+\end{proof}
+%\nocite{*}
+
+\begin{proof}[Proof of Theorem \ref{RDP}]
+	Take the inverse fourtier transform.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{them:GSYM}]
+
+	%Actualy I think we could have more zeroes on imaginary axis possibly. Thionk about hadamard. But this is fine. Rouche precludes them elsewhere.
+	Alternatively $\E e^{z \epsilon X} = \E e^{z\epsilon (X-c)}e^{z\epsilon c} = \frac{1}{2}e^{zc}\E e^{z(X-c)}+\frac{1}{2}e^{-zc}\E e^{-z(X-c)} = \frac{1}{2}\E e^{z(X-c)}(e^{zc}+^{-zc})$ where we use symmetry. Note the last term only has roots on the imaginary axis.
+\end{proof}
+
+
+\begin{thebibliography}{9}
+
+
+\bibitem{MR} Markovsky. I, Shodhan. R,
+Palindromic Polynomials, Time-Reversible Systems, and Conserved Quantities. https://eprints.soton.ac.uk/266592/1/Med08.pdf
+
+\bibitem{KB} Keel. L, Bhattarcharyya. S,
+A New Proof of the Jury Test. https://ieeexplore.ieee.org/document/703305
+%\bibitem{Z-2} 
+%https://mathoverflow.net/questions/208349
+\bibitem{NC} Newman, An Extension of Khintchines Inequality. 
+
+\bibitem{PS} Polya G. Szego G. Problems and Theorems in Analysis. 
+
+\bibitem{HP} Hallum P. Zeroes of Entire Functions Represented By Fourier Transforms
+%20-%20An%20extension%20of%20the%20khinchin%20inequality%20(3).pdf
+
+\bibitem{NW} Newman C. Wu W. Lee Yang Property and Gaussian Multiplicative Chaos
+
+\bibitem{DR} Dimitrov D. Rusev P. Zeroes of Entire Fourier Transforms
+
+\end{thebibliography}
+
+\end{document}
+
+
+

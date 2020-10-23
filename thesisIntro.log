@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.19)  23 OCT 2020 08:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.19)  23 OCT 2020 09:56
 entering extended mode
-**C:/Users/Alex/Desktop/Tkocz/prob_theory/log.tex
-(C:/Users/Alex/Desktop/Tkocz/prob_theory/log.tex
+**C:/Users/Alex/Desktop/Tkocz/prob_theory/thesisIntro.tex
+(C:/Users/Alex/Desktop/Tkocz/prob_theory/thesisIntro.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -290,31 +290,25 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 fg"))
 \c@theorem=\count112
 \c@conjecture=\count113
+ (thesisIntro.aux)
+\openout1 = `thesisIntro.aux'.
 
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
-Package amsthm Warning: Unknown theoremstyle `prop' on input line 43.
-
-
-Package amsthm Warning: Unknown theoremstyle `Corollary' on input line 46.
-
-(log.aux)
-\openout1 = `log.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen126
@@ -344,7 +338,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 54.
+Package hyperref Info: Link coloring OFF on input line 50.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.st
 y"
@@ -356,12 +350,12 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
- (log.out) (log.out)
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
+ (thesisIntro.out) (thesisIntro.out)
 \@outlinefile=\write3
-\openout3 = `log.out'.
+\openout3 = `thesisIntro.out'.
 
 
 *geometry* driver: auto-detecting
@@ -398,55 +392,79 @@ LaTeX Info: Redefining \nameref on input line 54.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 79.
-
 [1
 
-{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+[3]
+Overfull \hbox (20.20319pt too wide) in paragraph at lines 246--247
+[]\OT1/cmr/m/n/10 We count the changes of sign. In par-tic-u-lar $\OML/cmm/m/it
+/10 f\OT1/cmr/m/n/10 (0) \OML/cmm/m/it/10 > \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ;
+ f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 < \OT
+1/cmr/m/n/10 0\OML/cmm/m/it/10 ; :::; f\OT1/cmr/m/n/10 ([]) \OML/cmm/m/it/10 >
+ []
+
+[4]
+
+LaTeX Warning: Reference `them:GSYM' on page 5 undefined on input line 278.
 
 
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+Overfull \hbox (8.05823pt too wide) in paragraph at lines 281--282
+[]\OT1/cmr/m/n/10 Alternatively $\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m
+/n/10 = \U/msb/m/n/10 E\OML/cmm/m/it/10 e[]e[] \OT1/cmr/m/n/10 = []\OML/cmm/m/i
+t/10 e[]\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/1
+0 e[]\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 =
+ []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 206--210
+
+LaTeX Warning: Reference `them:ISYM' on page 5 undefined on input line 304.
+
+
+LaTeX Warning: Reference `them:GSYM' on page 5 undefined on input line 312.
+
+
+Overfull \hbox (8.05823pt too wide) in paragraph at lines 315--316
+[]\OT1/cmr/m/n/10 Alternatively $\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m
+/n/10 = \U/msb/m/n/10 E\OML/cmm/m/it/10 e[]e[] \OT1/cmr/m/n/10 = []\OML/cmm/m/i
+t/10 e[]\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/1
+0 e[]\U/msb/m/n/10 E\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--329
 []\OT1/cmr/m/n/10 Keel. L, Bhattar-charyya. S, A New Proof of the Jury Test.
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 215.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 215.
- (log.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 215.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 215.
-Package rerunfilecheck Info: File `log.out' has not changed.
-(rerunfilecheck)             Checksum: 2F1011853DB432F33A7013FB746C505A;258.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 215.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
+ (thesisIntro.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 342.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 342.
+Package rerunfilecheck Info: File `thesisIntro.out' has not changed.
+(rerunfilecheck)             Checksum: 204F6E25CCA728CBB434237B21932F8B;898.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 342.
  ) 
 Here is how much of TeX's memory you used:
- 6518 strings out of 493305
- 94959 string characters out of 3130237
- 186695 words of memory out of 3000000
- 9987 multiletter control sequences out of 15000+200000
- 7203 words of font info for 28 fonts, out of 3000000 for 9000
+ 6586 strings out of 493305
+ 95558 string characters out of 3130237
+ 191580 words of memory out of 3000000
+ 10018 multiletter control sequences out of 15000+200000
+ 11849 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,28p,434b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,9n,28p,739b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
@@ -456,15 +474,20 @@ Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Alex/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
 rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
 pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Alex/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Alex/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on log.pdf (3 pages, 166843 bytes).
+s/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/
+Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on thesisIntro.pdf (5 pages, 233719 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

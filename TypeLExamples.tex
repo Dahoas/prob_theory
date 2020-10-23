@@ -1,0 +1,132 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\shift}{\vdash}
+\newcommand{\lL}{\mathcal{L}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmp}[theorem]{Example}
+\newtheorem{prop}[theorem]{Prop}
+
+
+\title{\vspace{-3em}A Study of Khintchine Type Inequalities for Random Variables}
+\author{Alex Havrilla}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Known Examples of Type L Random Variables}
+
+Relatively few examples of Type L random variables are known. The majority we do have follow from results of Polya in his study of kernels producing strictly real zeroes of fourier transforms of the form:
+
+\begin{align*}
+	\phi(z) = \int_{\R} K(x)cos(zx)dx
+\end{align*}
+
+for some kernel $K : \R \to \R$. This can naturally be interpreted as the inverse fourier transform of a random variable $X$ with density $K$. And (assuming symmetry and nice gaussanity conditions) if $\phi$ has strictly real zeroes then we know $\phi(iz) = \E e^{-zX}$ has strictly imaginary zeroes and hence X is type L.
+
+\subsection{Polya's Examples}
+
+All of these examples can be found in Polya's \textit{Problems in Analysis} but the experience of retrieving them(and their proofs) is somewhat time consuming. Hopefully this presentation is somewhat less so. 
+
+\begin{theorem}[Decreasing Concave Density(173)] \label{CCDNSTY}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[L1 Bounded Derivative(175)] \label{LBDER}
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ with density f s.t. $|f(1)| \geq \int_0^1 |f'(t)|dt$. Then $X \in \lL$. Note in particular this works for the case $f$ is increasing.
+\end{theorem}
+
+\begin{theorem}[Exponential Density(170)] \label{EXPDEN}
+	Let $\alpha$ be even integer greater than 2. Then if $X$ a symmetric continuous random variable with density of the form $e^{-t^{\alpha}}$ then $X \in \lL$
+\end{theorem}
+
+\begin{theorem}[Exponential Product Density(161)] \label{EXPPDEN}
+	Let $1 > \alpha \geq 0, 0 < \alpha_1 \leq \alpha_2 \leq ...$ and reciprocal convergent. Then if $g(z)= e^{-\alpha z} (1-\frac{z}{\alpha_1})(1-\frac{z}{\alpha_2})...$ we have for symmetric X with density $e^{-t^2} g(-t^2)$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Bessel Function(159)] \label{BF}
+	The symmetric continuous random variable X with density $\frac{2}{\pi\sqrt{1-t^2}}$ in $\lL$.
+\end{theorem} 
+
+\begin{theorem}[Large nth Coefficient(27)] \label{LNC}
+	Suppose X a discrete integer valued symmetric distribution. If $p_0 + 2p_1 +... + 2p_{n-1} < 2p_n$ then $X \in \lL$. 
+\end{theorem}
+
+%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+
+\subsection{Newman's Examples}
+
+Newman, who initiated our study in Type L random variables, produced some examples as well. 
+
+\begin{theorem}[Arithmetic Sequences] \label{them:AS}
+	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{theorem}[Uniform(Newman 7)] \label{UNI}
+	Let $X$ be random variable with density $\frac{d\mu}{dy} = 1$ if $|y| \leq A$ and 0 otherwise. $A > 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Newman (8)] \label{N8}
+	Density $(1-y^2)^{(d-2)/2}$ with $|y| \leq 1$ and 0 otherwise. For $d > 0$. 
+\end{theorem}
+
+\begin{theorem}[Newman (9)] \label{N9}
+	Density $e^{-\lambda cosh(y)}$, $\lambda >0$
+\end{theorem}
+
+\begin{theorem}[Newman (10)] \label{N10}
+	$e^{-ay^4-by^2}$ with $a>0$
+\end{theorem}
+
+\subsection{Other Examples}
+
+\begin{theorem}[Enestrom-Kakeya] \label{them:EK}
+	If $X$ integer valued symmetric with $0\leq p_0 \leq 2 p_1 \leq ... \leq 2p_n$ with $p_n >0$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Absolute Value] \label{them:ABS}
+	Let $a_0,a_1,...,a_n \in \R$ with $|a_0| + .. | a_{n-1}| \leq |a_n|$ then the trig polys $p_c(z) = \sum_{k=0}^n a_k cos(kz)$ and the sin one have only real zeroes
+\end{theorem}
+
+\end{document}
+
+
+
