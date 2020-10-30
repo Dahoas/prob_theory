@@ -8,6 +8,7 @@
 %\usepackage{refcheck}
 
 \newcommand{\dd}{\mathrm{d}}
+\newcommand{\Pp}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\1}{\textbf{1}}
 \newcommand{\R}{\mathbb{R}}
@@ -19,6 +20,7 @@
 \newcommand{\red}{\color{red}}
 \newcommand{\shift}{\vdash}
 \newcommand{\lL}{\mathcal{L}}
+\newcommand{\norm}[1]{||#1||}
 
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\sgn}{sgn}
@@ -52,6 +54,91 @@
 \maketitle
 
 \section{Introduction}
+
+\section{Ultra Sub-Gaussanity and Strong Log Concavity}
+
+Here we discuss the notions of Ultra Sub-Gaussanity and Strong Log Concavity of a Random Variable. First recall
+
+\begin{defn}
+	A sequence $(a_i)_{i=0}^{\infty}$ of non-negative real numbers is called \textit{log-concave} if $a_i^2 \geq a_{i-1}a_{i+1}$.
+\end{defn}
+
+Then we can define the notion of \textit{Ultra Sub-Gaussanity} for $\R^n$ valued random vectors.
+
+\begin{defn}
+	$\R^n$ valued $X$ is \textit{Ultra sub-Gaussian} if $X=0$ or X is rotation invariant, has finite moments, and has gaussian log-concave even moments ie. $a_i = \E \norm{X}^{2i}/\E \norm{G}^{2i}$ are log-concave.
+\end{defn}
+
+Given X Ultra Sub-Gaussian we can extract a khintchine type inequality of the following form.
+
+\begin{theorem}
+	Let n,d positive integers and $p > q \geq 2$ even integers. If $X_1,...,X_n$ independent $\R^n$ valued random vectors are ultra sub-Gaussian then
+	\begin{align*}
+		(\E |S|^p)^{1/p} \leq \frac{(\E|G|^p)^{1/p}}{(\E|G|^q)^{1/q}}\E (|S|^q)^{1/q}
+	\end{align*}
+
+	where $S = \sum_i X_i$
+\end{theorem}
+
+The proof of which rests crucially on the clsoure of \textbf{USG} under sums:
+
+\begin{lemma}
+	If $X,Y \in \textbf{USG}$ are independent random vectors then $X+Y \in \textbf{USG}$.
+\end{lemma}
+
+\section{A Discrete Generalization of Random Signs}
+
+We recall that a random sign $\epsilon$ takes values on $\{-1,1\}$ with uniform probability. We now consider the generalization to $X ~ \{-L,,..,0,...,L\}$ with some mass $\Pp(X = 0) = \rho_0$ and otherwise uniformly distributed on the $\{-L,...,-1\} \cup \{1,...,L\}$. We have the following results.
+
+\begin{theorem}\label{thm:USG}
+Let $\rho_0 \in [0,1]$ and let $L$ be a positive integer. Let $X_1, X_2,\dots$ be i.i.d. copies of a random variable $X$ with $\p{X=0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1,\dots,L$. Then $X$ is ultra sub-Gaussian if and only if $\rho_0 = 1$, or
+\begin{equation}\label{eq:USG-rho}
+\rho_0 \leq 1 - \frac{2}{5}\frac{3L^2+3L-1}{(L+1)(2L+1)}.
+\end{equation}
+If this holds, then, consequently, for positive even integers $q > p \geq 2$, every $n \geq 1$ and reals $a_1,\dots,a_n$, we have
+\begin{equation}\label{eq:Khin-even}
+\left(\E\left|\sum_{i=1}^n a_iX_i\right|^q\right)^{1/q} \leq C_{p,q}\left(\E\left|\sum_{i=1}^n a_iX_i\right|^p\right)^{1/p}
+\end{equation}
+with $C_{p,q} = \frac{[1\cdot 3\cdot\ldots \cdot (q-1)]^{1/q}}{[1\cdot 3\cdot\ldots \cdot (p-1)]^{1/p}}$ which is sharp.
+\end{theorem}
+
+Here we first need to recall the classical notions of majorisation and Schur-convexity. Given two nonnegative sequences $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$, we say that $(b_i)_{i=1}^n$ \emph{majorises} $(a_i)_{i=1}^n$, denoted $(a_i) \prec (b_i)$ if
+\[
+\sum_{i=1}^n a_i = \sum_{i=1}^n b_i \qquad \text{and} \qquad \sum_{i=1}^k a_i^* = \sum_{i=1}^k b_i^* \ \text{ for all } \ k = 1,\ldots,n,
+\]
+where $(a_i^*)_{i=1}^n$ and $(b_i^*)_{i=1}^n$ are nonincreasing permutations of $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$ respectively. For example, $(\frac{1}{n},\frac{1}{n},\dots,\frac{1}{n}) \prec (a_1,a_2,\dots,a_n) \prec (1,0,\dots,0)$ for every nonnegative sequence $(a_i)$ with $\sum_{i=1}^n a_i = 1$. A function $\Psi\colon [0,\infty)^n \to \R$ which is symmetric (with respect to permuting the coordinates) is said to be \emph{Schur-convex} if $\Psi(a) \leq \Psi(b)$ whenever $a \prec b$ and \emph{Schur-concave} if $\Psi(a) \geq \Psi(b)$ whenever $a \prec b$. For instance, a function of the form $\Psi(a) = \sum_{i=1}^n \psi(a_i)$ with $\psi\colon [0,+\infty) \to \R$ being convex is Schur-convex.
+
+\begin{theorem}\label{thm:2-p>3}
+Let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = -j} = \p{X = j} = \frac{1}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$, reals $a_1,\ldots,a_n$ and $p \geq 3$, we have
+\begin{equation}\label{eq:2-p>3}
+\left(\E\left|\sum_{i=1}^n a_iX_i \right|^p\right)^{1/p} \leq C_p \left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
+\end{theorem}
+
+\begin{theorem}\label{thm:Schur}
+Let $\rho_0 \in [0,\frac{1}{2}]$. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -1} = \p{X = 1} = \frac{1-\rho_0}{2}$. Let $p \geq 3$. For every $n \geq 1$ and reals $a_1,\ldots,a_n, b_1, \ldots, b_n$ such that $(a_i^2)_{i=1}^n \prec (b_i^2)_{i=1}^n$, we have
+\begin{equation}\label{eq:Schur}
+\E\left|\sum_{i=1}^n a_iX_i \right|^p \geq \E\left|\sum_{i=1}^n b_iX_i \right|^p.
+\end{equation}
+\end{theorem}
+
+\begin{corollary}
+Under the assumptions of Theorem \ref{thm:Schur} for every $n \geq 1$ and reals $a_1,\ldots,a_n$, we have
+\begin{equation}\label{eq:2-p>3'}
+\left(\E\left|\sum_{i=1}^n a_iX_i \right|^p\right)^{1/p} \leq C_p \left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
+\end{corollary}
+
+\begin{theorem}\label{thm:L1-L2}
+Let $\rho_0 \in [\frac{1}{2},1]$ and let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$ and reals $a_1,\ldots,a_n$, we have
+\begin{equation}\label{eq:L1-L2}
+\E\left|\sum_{i=1}^n a_iX_i \right| \geq c_1\left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $c_1 = \frac{\E|X|}{\sqrt{\E|X|^2}} = \sqrt{\frac{3(1-\rho_0)L(L+1)}{2(2L+1)}}$ which is sharp.
+\end{theorem}
+
 
 \section{Known Examples of Type L Random Variables}
 
@@ -323,6 +410,10 @@ We also know marginals of uniformly random vectors on spheres are types L.
 
 
 \begin{thebibliography}{9}
+
+\bibitem{HT} Havrilla. A, Tkocz. T, Sharp Khinchin-type inequalities for symmetric discrete uniform random variables. https://arxiv.org/abs/1912.13345
+
+\bibitem{NO} Nayar, P. Oleskiewiz. Khintchin-type Inequalities with optimal constants via Ultra-Log Concavity
 
 
 \bibitem{MR} Markovsky. I, Shodhan. R,
